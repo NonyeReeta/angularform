@@ -1,0 +1,11 @@
+.container {
+    border: 2px solid gray;
+    border-radius: 20px;
+    margin-top: 10%;
+    height: 40%;
+    padding: 5% 0;
+}
+h1 {
+    color:lavenderblush;
+padding: 20px 0;
+}

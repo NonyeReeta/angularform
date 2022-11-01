@@ -1,0 +1,45 @@
+    <div class="form-container">
+        <form  #form="ngForm" (ngSubmit)="submit(form)" >
+          <div class="form-group">
+            <label form="firstname" >FirstName</label>
+            <input #fname="ngModel" required minlength="2" maxlength="15" type="text" name="firstname" class="form-control" placeholder="First name" ngModel>
+          <div *ngIf="fname.touched && fname.invalid" style="background-color: darkseagreen; color:red;">
+Please input first name
+          </div>
+          </div>  
+          <pre></pre>
+          <div class="form-group">
+            <label form="lastname" >LastName</label>
+            <input #lname="ngModel" required minlength="2" maxlength="15" type="text" name="lastname" class="form-control" placeholder="Last Name" ngModel>
+            <div *ngIf="lname.touched && lname.invalid" style="background-color: darkseagreen; color:red;">
+              Please input last name
+            </div>
+          </div> 
+          <pre></pre>
+          <div class="form-group">
+            <label form="phonenumber" >Phone Number</label>
+            <input #phonenumber="ngModel" required pattern="^[0-9]*$" minlength="11" maxlength="11" type="text" name="phonenumber" class="form-control" placeholder="0xxxxxxxxxx" ngModel>
+            <div *ngIf="phonenumber.touched && phonenumber.invalid" style="background-color: darkseagreen; color:red;">
+              Enter a valid phone number
+            </div>
+        </div> 
+          <pre></pre>
+          <div class="form-group">
+            <label form="email" >Email</label>
+            <input name="email" #email="ngModel" required type="email" placeholder="you@email.com" ngModel name="email" class="form-control" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" >
+            <div *ngIf="email.touched && email.invalid" style="background-color: darkseagreen; color:red;"> 
+                Please check email address field
+            </div> 
+          </div> 
+          <pre></pre>
+          <div class="form-group">
+            <label form="field" >Field(eg frontend-angular)</label>
+            <input #field="ngModel" required type="text" name="field" class="form-control" placeholder="(eg) backend-nodejs" ngModel>
+            <div *ngIf="field.touched && field.invalid" style="background-color: darkseagreen; color:red;"> 
+              Check that the tech stack is correct
+          </div>
+          </div>
+          <pre></pre>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+        </form>
+    </div>
